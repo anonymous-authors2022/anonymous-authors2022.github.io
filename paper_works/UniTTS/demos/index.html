@@ -28,10 +28,11 @@
     <br>
 
     <div>
-        <h2>Visualization of Latent Space</h2>
+        <h2>Visualization of Unified Embedding Space</h2>
         These visualization results illustrate the latent space of style attributes modeled by UniTTS. <br>
+        We used EmotionTTS dataset for visualization. EmotionTTS dataset consists of 15 speakers and 4 emotions(neutral, happy, sad and angry).
 
-        <h3>Unstyled phoneme embeddings</h3>
+        <h3>Initial phoneme embeddings that does not contain style information</h3>
         
         <table style="text-align:center">
             <tr>
@@ -40,9 +41,9 @@
                 <th><img src="./samples/visualizations/4-c.gif" width=400> </th>
             </tr>
             <tr>
-                <th>(a) Unstyled phoneme embeddings<br> colored by phoneme type</th>
-                <th>(b) Unstyled phoneme embeddings<br> colored by speaker label</th>
-                <th>(c) Unstyled phoneme embeddings<br> colored by emotion label</th>
+                <th>(a) Initial phoneme embeddings<br> colored by phoneme type</th>
+                <th>(b) Initial phoneme embeddings<br> colored by speaker label</th>
+                <th>(c) Initial phoneme embeddings<br> colored by emotion label</th>
             </tr>
         </table>
         <br>
@@ -51,7 +52,7 @@
 
         <br>
 
-        <h3>Residual embeddings</h3>
+        <h3>Residual embeddings of style attributes (speaker ID, emotion, pitch and energy)</h3>
         <table style="text-align:center">
             <tr>
                 <th><img src="./samples/visualizations/5-a.gif" width=400> </th>
@@ -74,7 +75,7 @@
         
         <br><br>
 
-        <h3>Full style embeddings</h3>
+        <h3>Full style embeddings that jointly represent all attributes (speaker ID, emotion, unlabeled local prosody, pitch, and energy)</h3>
         <table style="text-align:center">
             <tr>
                 <th><img src="./samples/visualizations/6-a.gif" width=400> </th>
@@ -84,163 +85,21 @@
                 
             </tr>
             <tr>
-                <th>(a) Full-style embeddings(F-A)<br> colored by speaker label</th>
-                <th>(b) Full-style embeddings(F-A)<br> colored by emotion label</th>
-                <th>(c) Full-style embeddings<br> normalized by speaker embedding<br> (F-B) colored by speaker label</th>
-                <th>(d) Full-style embeddings<br> normalized by speaker embedding<br> (F-B) colored by emotion label</th>
+                <th>(a) Full style embeddings(F-A)<br> colored by speaker label</th>
+                <th>(b) Full style embeddings(F-A)<br> colored by emotion label</th>
+                <th>(c) Full style embeddings<br> normalized by speaker embedding<br> (F-B) colored by speaker label</th>
+                <th>(d) Full style embeddings<br> normalized by speaker embedding<br> (F-B) colored by emotion label</th>
             </tr>
         </table>
         <br>
-        These figures are the t-SNE visualization of the distribution of the full-style embeddings that incorporate all style attributes. <br>
+        These figures are the t-SNE visualization of the distribution of the full style embeddings that incorporate all style attributes. <br>
         The uppercase letters indicate the locations in Fig. 3 where the embeddings were extracted. <br>
-        (a) and (b)show that the full-style embedding contains both speaker and emotion information. <br>
-        (c) shows that the full-style embedding normalized by the means of the speaker embeddings does not contain speaker information. <br>
-        (d) shows that the variance in emotion is dominant after normalizing the full-style embedding by the means of speaker embeddings. <br>
+        (a) and (b)show that the full style embedding contains both speaker and emotion information. <br>
+        (c) shows that the full style embedding normalized by the means of the speaker embeddings does not contain speaker information. <br>
+        (d) shows that the variance in emotion is dominant after normalizing the full style embedding by the means of speaker embeddings. <br>
     </div>
 
     <br><br>
-
-    <div>
-        <h2>Speaker Modeling</h2>
-
-        These audio samples demonstrate the speaker modeling performance of UniTTS. <br>
-        Please compare the audio samples focusing on the similarity in speaker characteristics between the reference and the synthesized samples.<br>
-        
-        &nbsp;&nbsp;&nbsp; - Column 1: ground-truth<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Column 1: the reference ground-truth samples synthesized by vocoder. (ground-truth melspectrogram) <br>
-        &nbsp;&nbsp;&nbsp; - Column 2~4: audio samples demonstrating UniTTS's speaker(or emotion) modeling performance with other expressive TTS models<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 2: UniTTS using separate embeddings for speaker ID and emotion (for comparison)<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 3: UniTTS using gradient reversal on seperate embeddings for speaker ID and emotion (for comparison) <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 4: UniTTS using unified embedding (proposed)<br>
-        &nbsp;&nbsp;&nbsp; - Columns 5~6: audio samples demonstrating the effects of the techniques used in UniTTS<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 5: UniTTS learned from scratch without distillation<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 6: UniTTS not applying data augmentation<br><br>
-
-        <table style="text-align:center">
-            <tr>
-                <th></th>
-                <th>Reference Speech</th>
-                <th>Separate embeddings for speaker ID and emotion</th>
-                <th>Gradient reversal</th>
-                <th>UniTTS: unified embedding (proposed)</th>
-                <th>UniTTS learned from scratch</th>
-                <th>UniTTS w.o. data augmentation</th>
-
-            </tr>
-            <tr>
-                <td>sample 1</td>
-                <td><audio controls><source src="samples/speaker_similarity/GT_mel/1.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/separate_embedding/1.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/gradient_reversal/1.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniTTS/1.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/trained_from_scratch/1.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniTTS_wo_aug/1.wav"></audio></td>
-            </tr>
-            <tr>
-                <td>sample 2</td>
-                <td><audio controls><source src="samples/speaker_similarity/GT_mel/2.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/separate_embedding/2.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/gradient_reversal/2.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniTTS/2.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/trained_from_scratch/2.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniTTS_wo_aug/2.wav"></audio></td>
-            </tr>
-            <tr>
-                <td>sample 3</td>
-                <td><audio controls><source src="samples/speaker_similarity/GT_mel/3.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/separate_embedding/3.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/gradient_reversal/3.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniTTS/3.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/trained_from_scratch/3.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniTTS_wo_aug/3.wav"></audio></td>
-            </tr>
-        </table>
-    </div>
-
-    <br><br>
-
-    <div>
-        <h2>Emotion Modeling</h2>
-
-        These audio samples demonstrate the speaker modeling performance of UniTTS. <br>
-        Please compare the audio samples focusing on the similarity in speaker characteristics between the reference and the synthesized samples.<br><br>
-        <strong>Sample 1 ~ 3 are existing speaker-emotion combination, whereas sample 4 ~ 5 are synthesized using non-existing speaker-emotion combination in dataset.</strong><br><br>
-        
-        &nbsp;&nbsp;&nbsp; - Column 1: ground-truth (reference)<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Column 1: the reference ground-truth samples synthesized by vocoder. (ground-truth melspectrogram) <br>
-        &nbsp;&nbsp;&nbsp; - Column 2~4: audio samples demonstrating UniTTS's speaker(or emotion) modeling performance with other expressive TTS models<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 2: UniTTS using separate embeddings for speaker ID and emotion (for comparison)<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 3: UniTTS using gradient reversal on seperate embeddings for speaker ID and emotion (for comparison) <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 4: UniTTS using unified embedding (proposed)<br>
-        &nbsp;&nbsp;&nbsp; - Columns 5~6: audio samples demonstrating the effects of the techniques used in UniTTS<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 5: UniTTS learned from scratch without distillation<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 6: UniTTS not applying data augmentation<br><br>
-
-        <table style="text-align:center">
-            <tr>
-                <th></th>
-                <th>Reference Speech</th>
-                <th>Separate embeddings for speaker ID and emotion</th>
-                <th>Gradient reversal</th>
-                <th>UniTTS: unified embedding (proposed)</th>
-                <th>UniTTS learned from scratch</th>
-                <th>UniTTS w.o. data augmentation</th>
-
-            </tr>
-            <tr>
-                <td>sample 1</td>
-                <td><audio controls><source src="samples/emotion_similarity/GT_mel/1.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/separate_embedding/1.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/gradient_reversal/1.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniTTS/1.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/trained_from_scratch/1.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniTTS_wo_aug/1.wav"></audio></td>
-            </tr>
-            <tr>
-                <td>sample 2</td>
-                <td><audio controls><source src="samples/emotion_similarity/GT_mel/2.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/separate_embedding/2.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/gradient_reversal/2.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniTTS/2.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/trained_from_scratch/2.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniTTS_wo_aug/2.wav"></audio></td>
-            </tr>
-            <tr>
-                <td>sample 3</td>
-                <td><audio controls><source src="samples/emotion_similarity/GT_mel/3.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/separate_embedding/3.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/gradient_reversal/3.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniTTS/3.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/trained_from_scratch/3.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniTTS_wo_aug/3.wav"></audio></td>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>
-                    <br>sample 4 <br><br>ned(no disgusting emotion) speaker <br>+ disgusting emotion in KES dataset
-                <td>
-                    <br><audio controls><source src="samples/emotion_similarity/GT_mel/4-ned.wav"></audio> <br> ned speaker<br>
-                    <audio controls><source src="samples/emotion_similarity/GT_mel/4-dis.wav"></audio> <br> KES speaker - disgusting emotion<br>
-                </td>
-                <td><audio controls><source src="samples/emotion_similarity/separate_embedding/4.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/gradient_reversal/4.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniTTS/4.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/trained_from_scratch/4.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniTTS_wo_aug/4.wav"></audio></td>
-            </tr>
-        </table>
-    </div>
- 
-    <br><br>
-
 
     <div>
         <h2> Speaker and emotion modeling </h2>
@@ -314,8 +173,6 @@
             </tr>
         </table>
     </div>
-
-    <br><br>
 
     <div>
         <h2>Effect of Data augmentation</h2>
