@@ -116,20 +116,6 @@
     
             </tr>
             <tr>
-                <td>nem speaker mel</td>
-                <td><img src="samples/speaker_and_emotion_modeling/1_nem_neu.png" height=150></td>
-                <td><img src="samples/speaker_and_emotion_modeling/1_nem_hap.png" height=150></td>
-                <td><img src="samples/speaker_and_emotion_modeling/1_nem_sad.png" height=150></td>
-                <td><img src="samples/speaker_and_emotion_modeling/1_nem_ang.png" height=150></td>
-            </tr>
-            <tr>
-		        <td>nem speaker wav</td>
-                <td><audio controls><source src="samples/speaker_and_emotion_modeling/1_nem_neu.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_and_emotion_modeling/1_nem_hap.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_and_emotion_modeling/1_nem_sad.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_and_emotion_modeling/1_nem_ang.wav"></audio></td>
-            </tr>
-            <tr>
                 <td>nea speaker mel</td>
                 <td><img src="samples/speaker_and_emotion_modeling/2_nea_neu.png" height=150></td>
                 <td><img src="samples/speaker_and_emotion_modeling/2_nea_hap.png" height=150></td>
@@ -142,6 +128,20 @@
                 <td><audio controls><source src="samples/speaker_and_emotion_modeling/2_nea_hap.wav"></audio></td>
                 <td><audio controls><source src="samples/speaker_and_emotion_modeling/2_nea_sad.wav"></audio></td>
                 <td><audio controls><source src="samples/speaker_and_emotion_modeling/2_nea_ang.wav"></audio></td>
+            </tr>
+            <tr>
+                <td>nem speaker mel</td>
+                <td><img src="samples/speaker_and_emotion_modeling/1_nem_neu.png" height=150></td>
+                <td><img src="samples/speaker_and_emotion_modeling/1_nem_hap.png" height=150></td>
+                <td><img src="samples/speaker_and_emotion_modeling/1_nem_sad.png" height=150></td>
+                <td><img src="samples/speaker_and_emotion_modeling/1_nem_ang.png" height=150></td>
+            </tr>
+            <tr>
+		        <td>nem speaker wav</td>
+                <td><audio controls><source src="samples/speaker_and_emotion_modeling/1_nem_neu.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_and_emotion_modeling/1_nem_hap.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_and_emotion_modeling/1_nem_sad.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_and_emotion_modeling/1_nem_ang.wav"></audio></td>
             </tr>
             <tr>
                 <td>nec speaker mel</td>
@@ -175,11 +175,11 @@
     </div>
 
     <div>
-        <h2>Effect of Data augmentation</h2>
+        <h2>Energy and Pitch Control (with and without Transform-aware Data Augmentation)</h2>
 
         <h3>Energy control</h3>
 
-        The following samples were synthesized by UniTTS with increased or decreased energy values.	<br>
+        The following samples were synthesized by UniTTS with increased, the original, and decreased energy values	<br>
 
         &nbsp;&nbsp;&nbsp;&nbsp; - Row 1: the ground truth samples and augmented samples whose energy values were increased or decreased using the SOX toolkit.<br>
         &nbsp;&nbsp;&nbsp;&nbsp; - Row 2: the audio samples synthesized by UniTTS applying data augmentation <br>
@@ -192,7 +192,7 @@
             <tr>
                 <th></th>
                 <th>increased energy values</th>
-                <th>0</th>
+                <th>the original energy values</th>
                 <th>decreased energy values</th>
     
             </tr>
@@ -244,7 +244,7 @@
 
         <h3>Pitch control</h3>
 
-        The following samples were synthesized by UniTTS with increased or decreased pitch values. <br>
+        The following samples were synthesized by UniTTS with increased, the original, and decreased pitch values <br>
         Please note that adjusting the pitch of the voice using the SOX toolkit has a side-effect that changes the timbre as shown in the first row. <br>
     
         &nbsp;&nbsp;&nbsp;&nbsp; - Row 1: the ground truth samples and augmented samples whose pitch values were increased or decreased using the SOX toolkit. <br>
@@ -259,7 +259,7 @@
             <tr>
                 <th></th>
                 <th>increased pitch values</th>
-                <th>0</th>
+                <th>the original pitch values</th>
                 <th>decreased pitch values</th>
     
             </tr>
@@ -317,7 +317,7 @@
         <table style="text-align:center">
             <tr>
                 <th></th>
-                <th>0</th>
+                <th>the original pitch and energy values</th>
                 <th>pitch +, energy +</th>
                 <th>pitch +, energy -</th> 
                 <th>pitch -, energy +</th> 
@@ -395,59 +395,76 @@
             <tr>
                 <th></th>
                 <th>The sources of speaker embedding</th>
+                <th></th>
                 <th>The sources of other style embeddings</th>
-                <th>The samples synthesized with the combined style embedding</th>
+                <th></th>
+                <th>The samples synthesized <br> with the combined style embedding</th>
             </tr>
 
             <tr>
                 <td>emh speaker + emg(angry)'s prosody mel</td>
                 <td><img src="samples/style_mixing/speaker/male_male_speaker.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/speaker/male_male_other_prosodies.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/speaker/male_male_mixed.png"></td>
             </tr>
             <tr>
                 <td>emh speaker + emg(angry)'s prosody wav</td>
                 <td><audio controls><source src="samples/style_mixing/speaker/male_male_speaker.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/speaker/male_male_other_prosodies.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/speaker/male_male_mixed.wav"></audio></td>
             </tr>
-
             <tr>
                 <td>emh speaker + emb(happy)'s prosody mel</td>
                 <td><img src="samples/style_mixing/speaker/male_female_speaker.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/speaker/male_female_other_prosodies.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/speaker/male_female_mixed.png"></td>
             </tr>
             <tr>
                 <td>emh speaker + emb(happy)'s prosody wav</td>
                 <td><audio controls><source src="samples/style_mixing/speaker/male_female_speaker.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/speaker/male_female_other_prosodies.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/speaker/male_female_mixed.wav"></audio></td>
             </tr>
 
             <tr>
                 <td>emb speaker + emg(angry)'s prosody mel</td>
                 <td><img src="samples/style_mixing/speaker/female_male_speaker.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/speaker/female_male_other_prosodies.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/speaker/female_male_mixed.png"></td>
             </tr>
             <tr>
                 <td>emb speaker + emg(angry)'s prosody wav</td>
                 <td><audio controls><source src="samples/style_mixing/speaker/female_male_speaker.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/speaker/female_male_other_prosodies.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/speaker/female_male_mixed.wav"></audio></td>
             </tr>
 
             <tr>
                 <td>emb speaker + ema(sad)'s prosody mel</td>
                 <td><img src="samples/style_mixing/speaker/female_female_speaker.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/speaker/female_female_other_prosodies.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/speaker/female_female_mixed.png"></td>
             </tr>
             <tr>
                 <td>emb speaker + ema(sad)'s prosody wav</td>
                 <td><audio controls><source src="samples/style_mixing/speaker/female_female_speaker.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/speaker/female_female_other_prosodies.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/speaker/female_female_mixed.wav"></audio></td>
             </tr>
         </table>
@@ -466,59 +483,77 @@
             <tr>
                 <th></th>
                 <th>The sources of emotion embedding</th>
+                <th></th>
                 <th>The sources of other style embeddings</th>
-                <th>The samples synthesized with the combined style embedding</th>
+                <th></th>
+                <th>The samples synthesized <br> with the combined style embedding</th>
             </tr>
 
             <tr>
                 <td>emb's neutral emotion + emb(sad)'s other prosodies mel</td>
                 <td><img src="samples/style_mixing/emotion/neu_emotion.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/emotion/neu_other_prosodies.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/emotion/neu_mixed.png"></td>
             </tr>
             <tr>
                 <td>emb's neutral emotion + emb(sad)'s other prosodies wav</td>
                 <td><audio controls><source src="samples/style_mixing/emotion/neu_emotion.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/emotion/neu_other_prosodies.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/emotion/neu_mixed.wav"></audio></td>
             </tr>
 
             <tr>
                 <td>emh's happy emotion + emh(angry)'s other prosodies mel</td>
                 <td><img src="samples/style_mixing/emotion/hap_emotion.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/emotion/hap_other_prosodies.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/emotion/hap_mixed.png"></td>
             </tr>
             <tr>
                 <td>emh's happy emotion + emh(angry)'s other prosodies wav</td>
                 <td><audio controls><source src="samples/style_mixing/emotion/hap_emotion.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/emotion/hap_other_prosodies.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/emotion/hap_mixed.wav"></audio></td>
             </tr>
 
             <tr>
                 <td>emg's sad emotion + emg(happy)'s other prosodies mel</td>
                 <td><img src="samples/style_mixing/emotion/sad_emotion.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/emotion/sad_other_prosodies.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/emotion/sad_mixed.png"></td>
             </tr>
             <tr>
                 <td>emg's sad emotion + emg(happy)'s other prosodies wav</td>
                 <td><audio controls><source src="samples/style_mixing/emotion/sad_emotion.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/emotion/sad_other_prosodies.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/emotion/sad_mixed.wav"></audio></td>
             </tr>
 
             <tr>
                 <td>emb's angry emotion + emb(happy)'s other prosodies mel</td>
                 <td><img src="samples/style_mixing/emotion/ang_emotion.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/emotion/ang_other_prosodies.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/emotion/ang_mixed.png"></td>
             </tr>
             <tr>
                 <td>emb's angry emotion + emb(happy)'s other prosodies wav</td>
                 <td><audio controls><source src="samples/style_mixing/emotion/ang_emotion.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/emotion/ang_other_prosodies.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/emotion/ang_mixed.wav"></audio></td>
             </tr>
         </table>
@@ -540,60 +575,78 @@
         <table style="text-align:center">
             <tr>
                 <th></th>
-                <th>The sources of speaker embedding. (KSS dataset)</th>
-                <th>The sources of other style embeddings (ETOD dataset)</th>
-                <th>The samples synthesized with the combined style embedding</th>
+                <th>The sources of speaker embedding.<br> (KSS dataset)</th>
+                <th></th>
+                <th>The sources of other style embeddings <br>(ETOD dataset)</th>
+                <th></th>
+                <th>The samples synthesized <br> with the combined style embedding</th>
             </tr>
 
             <tr>
                 <td>KSS + emh speaker(angry)'s prosodies mel</td>
                 <td><img src="samples/style_mixing/kss/kss_1.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/kss/male_1.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/kss/mixed_1.png"></td>
             </tr>
             <tr>
                 <td>KSS + emh speaker(angry)'s prosodies wav</td>
                 <td><audio controls><source src="samples/style_mixing/kss/kss_1.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kss/male_1.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kss/mixed_1.wav"></audio></td>
             </tr>
 
             <tr>
                 <td>KSS + emg speaker(angry)'s prosodies mel</td>
                 <td><img src="samples/style_mixing/kss/kss_2.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/kss/male_2.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/kss/mixed_2.png"></td>
             </tr>
             <tr>
                 <td>KSS + emg speaker(angry)'s prosodies wav</td>
                 <td><audio controls><source src="samples/style_mixing/kss/kss_2.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kss/male_2.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kss/mixed_2.wav"></audio></td>
             </tr>
 
             <tr>
                 <td>KSS + emb speaker(neutral)'s prosodies mel</td>
                 <td><img src="samples/style_mixing/kss/kss_3.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/kss/female_3.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/kss/mixed_3.png"></td>
             </tr>
             <tr>
                 <td>KSS + emb speaker(neutral)'s prosodies wav</td>
                 <td><audio controls><source src="samples/style_mixing/kss/kss_3.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kss/female_3.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kss/mixed_3.wav"></audio></td>
             </tr>
 
             <tr>
                 <td>KSS + ema speaker(sad)'s prosodies mel</td>
                 <td><img src="samples/style_mixing/kss/kss_4.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/kss/female_4.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/kss/mixed_4.png"></td>
             </tr>
             <tr>
                 <td>KSS + ema speaker(sad)'s prosodies wav</td>
                 <td><audio controls><source src="samples/style_mixing/kss/kss_4.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kss/female_4.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kss/mixed_4.wav"></audio></td>
             </tr>
 
@@ -613,44 +666,58 @@
         <table style="text-align:center">
             <tr>
                 <th></th>
-                <th>The sources of speaker and emotion embeddings. (KES dataset)</th>
-                <th>The sources of other style embeddings (ETOD dataset)</th>
-                <th>The samples synthesized with the combined style embedding.</th>
+                <th>The sources of speaker and emotion embeddings.<br>(KES dataset)</th>
+                <th></th>
+                <th>The sources of other style embeddings <br> (ETOD dataset)</th>
+                <th></th>
+                <th>The samples synthesized <br> with the combined style embedding.</th>
             </tr>
             <tr>
                 <td>KES(disgusting) + emh speaker(angry)'s prosodies mel</td>
                 <td><img src="samples/style_mixing/kes/kes_1.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/kes/other_prosodies_1.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/kes/mixed_1.png"></td>
             </tr>
             <tr>
                 <td>KES(disgusting) + emh speaker(angry)'s prosodies wav</td>
                 <td><audio controls><source src="samples/style_mixing/kes/kes_1.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kes/other_prosodies_1.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kes/mixed_1.wav"></audio></td>
             </tr>
             <tr>
                 <td>KES(surprise) + emb speaker(sad)'s prosodies mel</td>
                 <td><img src="samples/style_mixing/kes/kes_2.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/kes/other_prosodies_2.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/kes/mixed_2.png"></td>
             </tr>
             <tr>
                 <td>KES(surprise) + emb speaker(sad)'s prosodies wav</td>
                 <td><audio controls><source src="samples/style_mixing/kes/kes_2.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kes/other_prosodies_2.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kes/mixed_2.wav"></audio></td>
             </tr>
             <tr>
                 <td>KES(fear) + emf speaker(happy)'s prosodies mel</td>
                 <td><img src="samples/style_mixing/kes/kes_3.png"></td>
+                <td><img width=50 src="assets/plus.png"></td>
                 <td><img src="samples/style_mixing/kes/other_prosodies_3.png"></td>
+                <td><img width=50 src="assets/equal.png"></td>
                 <td><img src="samples/style_mixing/kes/mixed_3.png"></td>
             </tr>
             <tr>
                 <td>KES(fear) + emf speaker(happy)'s prosodies wav</td>
                 <td><audio controls><source src="samples/style_mixing/kes/kes_3.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kes/other_prosodies_3.wav"></audio></td>
+                <td></td>
                 <td><audio controls><source src="samples/style_mixing/kes/mixed_3.wav"></audio></td>
             </tr>
         </table>
