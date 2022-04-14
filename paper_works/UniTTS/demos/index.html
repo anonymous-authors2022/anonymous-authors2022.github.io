@@ -728,7 +728,7 @@
 
         We compared samples from UniTTS(w.o. aug) with other method such as separate embedding and gradient reversal. <br>
         UniTTS produces the most natural and similar samples compared to separate embedding and gradient reversal. <br>
-        (Please note that these samples are from MOS test.)    <br>
+        (Please note that most of the samples are from MOS test.)    <br>
         <br>
         Overall, UniTTS (w.o. aug) produces natural samples while keeping speaker id and emotion similarity.<br> 
         UniTTS(w.o. aug) produces best result with respect to natural duration, pitch, energy and intonation, compared to other methods.<br>
@@ -739,7 +739,7 @@
         <table style="text-align:center">
             <tr>
                 <th></th>
-                <th>Reference sample</th>
+                <th>Reference sample (GT-mel)</th>
                 <th></th>
                 <th>Separate embedding</th>
                 <th>Gradient reversal</th>
@@ -747,24 +747,7 @@
             </tr>
 
             <tr>
-                <td>sample 1</td>
-                <td><audio controls><source src="samples/comparison_other_methods/GT_mel/1.wav"></audio></td>
-                <td></td>
-                <td><audio controls><source src="samples/comparison_other_methods/separate_embedding/1.wav"></audio></td>
-                <td><audio controls><source src="samples/comparison_other_methods/gradient_reversal/1.wav"></audio></td>
-                <td><audio controls><source src="samples/comparison_other_methods/UniTTS_wo_aug/1.wav"></audio></td>
-            </tr>
-            <tr>
-                <td>sample 2</td>
-                <td><audio controls><source src="samples/comparison_other_methods/GT_mel/2.wav"></audio></td>
-                <td></td>
-                <td><audio controls><source src="samples/comparison_other_methods/separate_embedding/2.wav"></audio></td>
-                <td><audio controls><source src="samples/comparison_other_methods/gradient_reversal/2.wav"></audio></td>
-                <td><audio controls><source src="samples/comparison_other_methods/UniTTS_wo_aug/2.wav"></audio></td>
-            </tr>
-
-            <tr>
-                <td>sample 3</td>
+                <td>neo - angry</td>
                 <td><audio controls><source src="samples/comparison_other_methods/GT_mel/3.wav"></audio></td>
                 <td></td>
                 <td><audio controls><source src="samples/comparison_other_methods/separate_embedding/3.wav"></audio></td>
@@ -773,13 +756,41 @@
             </tr>
 
             <tr>
-                <td>sample 4</td>
+                <td>emb - sad</td>
+                <td><audio controls><source src="samples/comparison_other_methods/GT_mel/2.wav"></audio></td>
+                <td></td>
+                <td><audio controls><source src="samples/comparison_other_methods/separate_embedding/2.wav"></audio></td>
+                <td><audio controls><source src="samples/comparison_other_methods/gradient_reversal/2.wav"></audio></td>
+                <td><audio controls><source src="samples/comparison_other_methods/UniTTS_wo_aug/2.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>ema - happy</td>
+                <td><audio controls><source src="samples/comparison_other_methods/GT_mel/5.wav"></audio></td>
+                <td></td>
+                <td><audio controls><source src="samples/comparison_other_methods/separate_embedding/5.wav"></audio></td>
+                <td><audio controls><source src="samples/comparison_other_methods/gradient_reversal/5.wav"></audio></td>
+                <td><audio controls><source src="samples/comparison_other_methods/UniTTS_wo_aug/5.wav"></audio></td>
+            </tr>            
+
+            <tr>
+                <td>emh - angry</td>
+                <td><audio controls><source src="samples/comparison_other_methods/GT_mel/1.wav"></audio></td>
+                <td></td>
+                <td><audio controls><source src="samples/comparison_other_methods/separate_embedding/1.wav"></audio></td>
+                <td><audio controls><source src="samples/comparison_other_methods/gradient_reversal/1.wav"></audio></td>
+                <td><audio controls><source src="samples/comparison_other_methods/UniTTS_wo_aug/1.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>nea - angry</td>
                 <td><audio controls><source src="samples/comparison_other_methods/GT_mel/4.wav"></audio></td>
                 <td></td>
                 <td><audio controls><source src="samples/comparison_other_methods/separate_embedding/4.wav"></audio></td>
                 <td><audio controls><source src="samples/comparison_other_methods/gradient_reversal/4.wav"></audio></td>
                 <td><audio controls><source src="samples/comparison_other_methods/UniTTS_wo_aug/4.wav"></audio></td>
             </tr>
+            
             <tr>
                 <td>unseen*</td>
                 <td><audio controls><source src="samples/comparison_other_methods/GT_mel/unseen.wav"></audio></td>
@@ -793,10 +804,10 @@
 
         unseen*: synthesized with speaker ema's id + kes's emotion(curious).
 
-        <br><br>
+        <!-- <br><br>
 
 
-        <!-- <h3>Ablation study</h3>
+        <h3>Ablation study</h3>
 
         <table style="text-align:center">
             <tr>
