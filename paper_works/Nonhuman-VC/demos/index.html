@@ -36,17 +36,6 @@
     &nbsp;
 
 
-    <!-- 버튼 컨트롤 -->
-    <div class="flex space-x-4 mb-6">
-        <button onclick="showPage('comparison')" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Comparison of Baseline Models
-        </button>
-        
-        <button onclick="showPage('ablation')" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-            Ablation Study
-        </button>
-    </div>
-
     &nbsp;
 
     <!-- Comparison of Baseline Models Page -->
@@ -206,58 +195,6 @@
 
     </div>
 
-    <!-- Ablation Study Page (초기 상태는 숨김) -->
-    <div id="ablation-page" class="hidden w-full max-w-5xl">
-        <h2 class="text-2xl font-semibold mb-4">Ablation Study</h2>
-        <p class="mb-4 text-gray-300">This section presents the effect of different ablation settings in our model. <b>"Proposed"</b> denotes our proposed model. <b>"w/o PP"</b> indicates the proposed model using conventional (speech-focused) preprocessing method instead of our proposed pipeline, <b>"w/ SEED"</b> denotes proposed model with style embedding added to the audio encoder/decoder, and <b>"w/o KL-A"</b> represents the proposed model trained without KL Annealing. </p>
-
-        <div class="grid grid-cols-4 gap-4 p-4 bg-gray-800 rounded-lg shadow-lg mb-6">
-            <div class="text-center"><p class="text-sm font-bold">Proposed (ours)</p><audio controls class="w-full"><source src="samples/proposed_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o PP</p><audio controls class="w-full"><source src="samples/ablation_nopp_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o SEED</p><audio controls class="w-full"><source src="samples/ablation_noseed_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o KL-A</p><audio controls class="w-full"><source src="samples/ablation_nokl_1.wav" type="audio/wav"></audio></div>
-        </div>
-        
-        
-        <div class="grid grid-cols-4 gap-4 p-4 bg-gray-800 rounded-lg shadow-lg mb-6">
-            <div class="text-center"><p class="text-sm font-bold">Proposed (ours)</p><audio controls class="w-full"><source src="samples/proposed_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o PP</p><audio controls class="w-full"><source src="samples/ablation_nopp_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o SEED</p><audio controls class="w-full"><source src="samples/ablation_noseed_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o KL-A</p><audio controls class="w-full"><source src="samples/ablation_nokl_1.wav" type="audio/wav"></audio></div>
-        </div>
-        
-        
-        <div class="grid grid-cols-4 gap-4 p-4 bg-gray-800 rounded-lg shadow-lg mb-6">
-            <div class="text-center"><p class="text-sm font-bold">Proposed (ours)</p><audio controls class="w-full"><source src="samples/proposed_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o PP</p><audio controls class="w-full"><source src="samples/ablation_nopp_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o SEED</p><audio controls class="w-full"><source src="samples/ablation_noseed_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o KL-A</p><audio controls class="w-full"><source src="samples/ablation_nokl_1.wav" type="audio/wav"></audio></div>
-        </div>
-        
-        
-        <div class="grid grid-cols-4 gap-4 p-4 bg-gray-800 rounded-lg shadow-lg mb-6">
-            <div class="text-center"><p class="text-sm font-bold">Proposed (ours)</p><audio controls class="w-full"><source src="samples/proposed_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o PP</p><audio controls class="w-full"><source src="samples/ablation_nopp_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o SEED</p><audio controls class="w-full"><source src="samples/ablation_noseed_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o KL-A</p><audio controls class="w-full"><source src="samples/ablation_nokl_1.wav" type="audio/wav"></audio></div>
-        </div>
-        
-        
-        <div class="grid grid-cols-4 gap-4 p-4 bg-gray-800 rounded-lg shadow-lg mb-6">
-            <div class="text-center"><p class="text-sm font-bold">Proposed (ours)</p><audio controls class="w-full"><source src="samples/proposed_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o PP</p><audio controls class="w-full"><source src="samples/ablation_nopp_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o SEED</p><audio controls class="w-full"><source src="samples/ablation_noseed_1.wav" type="audio/wav"></audio></div>
-            <div class="text-center"><p class="text-sm font-bold">w/o KL-A</p><audio controls class="w-full"><source src="samples/ablation_nokl_1.wav" type="audio/wav"></audio></div>
-        </div>
-    </div>
-
-    <script>
-        function showPage(page) {
-            document.getElementById('comparison-page').classList.add('hidden');
-            document.getElementById('ablation-page').classList.add('hidden');
-            document.getElementById(`${page}-page`).classList.remove('hidden');
-        }
-    </script>
 </body>
 </html>
 
